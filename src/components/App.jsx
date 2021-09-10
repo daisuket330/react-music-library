@@ -7,7 +7,8 @@ class App  extends Component {
         super(props);
         this.state = {  
             songs: []
-        }
+        };
+        this.getAllSongs = this.getAllSongs.bind(this);
     
   
     
@@ -31,10 +32,11 @@ class App  extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className ="App">
                 <h1>  music list</h1>
                 <button onClick ={this.getAllSongs}>test</button>
-            </React.Fragment>
+            </div>
+                
         );
         } 
     }

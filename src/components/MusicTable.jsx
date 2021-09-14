@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MusicTable.css'
 import axios from 'axios';
+import MusicSearch from './MusicSearch';
 
 class MusicViewer  extends Component {
     constructor(props) {
@@ -32,10 +33,10 @@ class MusicViewer  extends Component {
     }
 
 
-    async removeSong(songID){
-        let response = await axios.delete('http://127.0.0.1:8000/my_music_list/' + songID);
+    async removeSong(id){
+        let response = await axios.delete('http://127.0.0.1:8000/my_music_list/' + id + '/');
         console.log(response);
-        window.location.reload();
+        this.getAllSongs();
 
     }
 
@@ -43,15 +44,17 @@ class MusicViewer  extends Component {
     
     render() {
         return ( 
-            <table>
+            <div>
+                <MusicSearch songs={this.state.songs} />
+                <table>
                 <thead>
 
                     
                     <tr>
-                        <tr>title</tr>
-                        <tr>artist</tr>
-                        <tr>album</tr>
-                        <tr>release date</tr>
+                        <th>title</th>
+                        <th>artist</th>
+                        <th>album</th>
+                        <th>release date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,6 +71,7 @@ class MusicViewer  extends Component {
                 </tbody>
 
             </table>
+            </div>
         );
     }
 }

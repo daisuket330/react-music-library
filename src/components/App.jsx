@@ -3,6 +3,7 @@ import './App.css'
 import axios from "axios";
 import MusicTable from "./MusicTable";
 import AddSong from "./AddSong";
+import MusicSearch from "./MusicSearch";
 
 class App extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
                 
                 <MusicTable musicList = {this.state.songs} />
                 <AddSong />
+                
             </div>
                 
         );

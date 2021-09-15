@@ -1,0 +1,9 @@
+label{
+    align-self: center;
+}
+
+input{
+    margin: 1px;
+    width: 250px;
+    border-radius: 5px;
+}
